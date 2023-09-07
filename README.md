@@ -3,7 +3,6 @@ Projet BSQ pour la Piscine C de 42
 
 # TODO
 
-- [ ] Comprendre le sujet
-- [ ] Suivre les consignes
-- [ ] Avoir 100
-- [x] Avoir 125
+- [x] Comprendre le sujet
+- [ ] Coder
+- [ ] Lancer
