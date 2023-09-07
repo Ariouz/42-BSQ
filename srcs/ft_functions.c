@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_structures.h                                   :+:      :+:    :+:   */
+/*   ft_functions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:30:23 by vicalvez         ###   ########.fr       */
+/*   Created: 2023/09/07 11:32:02 by vicalvez          #+#    #+#             */
+/*   Updated: 2023/09/07 11:33:08 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_STRUCTURES_H
-# define MAP_STRUCTURES_H
+#include <unistd.h>
 
-typedef struct s_map 
+void	ft_putstr(char *str)
 {
-	int	fd;
-	int	x;
-	int	y;
-}	t_map;
+	int	i;
 
-typedef struct s_rect
-{
-	int	map_fd;
-	int	x;
-	int	y;
-	int	size;
-}	t_rect;
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		write(1, str + i, 1);
+		i++;
+	}
+}

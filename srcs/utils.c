@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_structures.h                                   :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:30:23 by vicalvez         ###   ########.fr       */
+/*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
+/*   Updated: 2023/09/07 11:55:20 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_STRUCTURES_H
-# define MAP_STRUCTURES_H
+#include "../includes/map_structures.h"
+#include <stdlib.h>
 
-typedef struct s_map 
+/*t_map	**get_maps(char **filenames, int fc)
 {
-	int	fd;
-	int	x;
-	int	y;
-}	t_map;
+	//t_map	**maps;
+	if (filenames)
+		return 0;
+	maps = malloc(sizeof(t_map *) * fc);
 
-typedef struct s_rect
-{
-	int	map_fd;
-	int	x;
-	int	y;
-	int	size;
-}	t_rect;
-
-#endif
+	return (maps);
+}*/

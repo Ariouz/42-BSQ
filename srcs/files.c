@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_structures.h                                   :+:      :+:    :+:   */
+/*   files.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:30:23 by vicalvez         ###   ########.fr       */
+/*   Created: 2023/09/07 11:05:17 by vicalvez          #+#    #+#             */
+/*   Updated: 2023/09/07 11:41:03 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_STRUCTURES_H
-# define MAP_STRUCTURES_H
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include "../includes/map_structures.h"
+#include "../includes/ft_functions.h"
 
-typedef struct s_map 
+t_map	init_map(char *filename)
 {
 	int	fd;
-	int	x;
-	int	y;
-}	t_map;
+	t_map	map;
 
-typedef struct s_rect
-{
-	int	map_fd;
-	int	x;
-	int	y;
-	int	size;
-}	t_rect;
-
-#endif
+	fd = open(filename, O_RDONLY);
+	map.fd = fd;
+	close(fd);
+	return (map);
+}

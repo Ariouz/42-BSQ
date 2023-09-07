@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_structures.h                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:30:23 by vicalvez         ###   ########.fr       */
+/*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
+/*   Updated: 2023/09/07 11:55:36 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_STRUCTURES_H
-# define MAP_STRUCTURES_H
+#include <stdlib.h>
+#include "../includes/utils.h"
+#include "../includes/files.h"
+#include "../includes/ft_functions.h"
+#include <stdio.h>
 
-typedef struct s_map 
+
+int	main(void)
 {
-	int	fd;
-	int	x;
-	int	y;
-}	t_map;
+//	t_map	**maps;
 
-typedef struct s_rect
-{
-	int	map_fd;
-	int	x;
-	int	y;
-	int	size;
-}	t_rect;
 
-#endif
+	t_map	map;
+	map = init_map("map.txt");
+	if (map.fd == -1)
+	{	ft_putstr("map error\n");
+		return (1);
+	}
+	printf("map fd: %d\n", map.fd);
+
+	
+	/*char **filenames = {"map"};
+	maps = get_maps(filenames, 1);
+	free(maps);*/
+	return (0);
+}
