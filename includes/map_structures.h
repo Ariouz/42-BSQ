@@ -6,12 +6,13 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:30:23 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:35:54 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_STRUCTURES_H
 # define MAP_STRUCTURES_H
+# define BUFFER_SIZE 100000000
 
 typedef struct s_map 
 {

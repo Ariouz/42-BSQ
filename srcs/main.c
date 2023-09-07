@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 14:30:55 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:29:08 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 #include "../includes/utils.h"
 #include "../includes/files.h"
 #include "../includes/ft_functions.h"
+#include "../includes/map_structures.h"
 #include <stdio.h>
 
 
 int	main(int argc, char **argv)
 {
-	t_map	**maps;
+	t_map	*maps;
 
 	if (argc <= 1)
 	{
@@ -28,9 +29,8 @@ int	main(int argc, char **argv)
 	}
 	
 	maps = get_maps(argv, argc);
-	if (is_map_error(maps))
-		return (2);
-	
+	is_map_error(maps);
+	close_maps(maps);	
 	free(maps);
 	return (0);
 }

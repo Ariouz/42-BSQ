@@ -6,14 +6,14 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:30:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 14:12:04 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:17:51 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_structures.h"
 
-t_map	**get_maps(char **filenames, int fc);
+t_map	*get_maps(char **filenames, int fc);
 
-int	is_map_error(t_map **maps);
+int	is_map_error(t_map *maps);
 
 void	map_error();
