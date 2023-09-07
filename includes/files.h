@@ -6,10 +6,10 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:30:29 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:34:37 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:52:47 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_structures.h"
 
-t_map	init_map(char *filename);
+void	close_maps(t_map *maps);

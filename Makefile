@@ -3,6 +3,8 @@
 
 COMPILE_FLAGS= -Wall -Wextra -Werror
 
+MAPS= maps/map1 maps/map2 maps/map3
+
 ## Colors
 RESTORE=\033[0m
 
@@ -24,12 +26,12 @@ WHITE=\033[01;37m
 
 compile:
 	echo "$(LBLUE) Compilation des fichiers...$(RESTORE)"
-	gcc $(COMPILE_FLAGS) srcs/*.c -o bsq.out
+	clang $(COMPILE_FLAGS) srcs/*.c -o bsq.out
 	echo "$(LGREEN) Compilation terminee.$(RESTORE)"
 
 test: compile
 	echo "$(CYAN) Lancement de l'executable...$(RESTORE)"
-	./bsq.out
+	./bsq.out $(MAPS)
 	echo "$(LYELLOW) Tests termines"
 
 

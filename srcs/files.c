@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:05:17 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 11:41:03 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:52:44 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 #include "../includes/map_structures.h"
 #include "../includes/ft_functions.h"
 
-t_map	init_map(char *filename)
+void	close_maps(t_map *maps)
 {
-	int	fd;
-	t_map	map;
+	int	i;
 
-	fd = open(filename, O_RDONLY);
-	map.fd = fd;
-	close(fd);
-	return (map);
+	i = 0;
+	while (maps[i].fd != -2)
+	{
+		close(maps[i].fd);
+		i++;
+	}
 }
