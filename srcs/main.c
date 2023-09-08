@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 17:29:08 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/08 09:19:44 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 	
 	maps = get_maps(argv, argc);
 	is_map_error(maps);
+	printf("test");
+	read_file(maps, argc);
 	close_maps(maps);	
 	free(maps);
 	return (0);
