@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/07 17:35:54 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/08 09:57:08 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct s_map
 	int	fd;
 	int	x;
 	int	y;
+	char	**content;
 }	t_map;
 
 typedef struct s_rect
