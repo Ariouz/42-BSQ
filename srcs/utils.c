@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 14:55:20 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:57:56 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	is_map_error(t_map *maps)
 			map_error();
 			exit(2);
 		}
-		while(maps[i].content[j])
+		/*while(maps[i].content[j])
 		{
 			if(ft_strlen(maps[i].content[1]) == ft_strlen(maps[i].content[j]))
 				j++;
@@ -70,7 +70,7 @@ void	is_map_error(t_map *maps)
 				map_error();
 				exit(3);
 			}
-		}
+		}*/
 	j = 1;
 	i++;
 	}
