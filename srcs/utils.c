@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 10:32:13 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:05:40 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_map	*get_maps(char **filenames, int fc)
  	{
 		map.fd = open(filenames[i], O_RDONLY);
 		// TODO INIT MAP X,Y
-		map.content = get_map_content(map.fd);
+		set_map_content(map.fd, &map);
 		maps[i-1] = map;
 		i++;
 	}
