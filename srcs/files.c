@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:05:17 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/08 10:36:10 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:09:45 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,18 @@ char	**get_map_content(int fd)
 
 	buffer = malloc(BUFFER_SIZE  * sizeof(char));
 	content = malloc(BUFFER_SIZE * sizeof(char *));
-
 	i = 0;
 	j = 0;
 	content[j] = malloc(BUFFER_SIZE * sizeof(char));
 	while ((buf = read(fd, buffer, 1)) > 0)
 	{
 		if (buffer[0] == '\n')
-		{
 			content[++j] = malloc(BUFFER_SIZE * sizeof(char));
-		}
 		content[j][i] = buffer[0];
 		i++;
 	}
+	if (j - 1 != ft_atoi(content[0]))
+		printf("**Erreur Map size add fonc !**");
 	return content;
 }
 

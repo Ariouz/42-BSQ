@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 10:32:13 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:10:53 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ t_map	*get_maps(char **filenames, int fc)
 void	is_map_error(t_map *maps)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 1;
 	while(maps[i].fd != -2)
 	{
 		if (maps[i].fd == -1)
@@ -60,6 +62,18 @@ void	is_map_error(t_map *maps)
 			map_error();
 			exit(2);
 		}
-		i++;
+		while(maps[i].content[j])
+		{
+			if(ft_strlen(maps[i].content[1]) == ft_strlen(maps[i].content[j]))
+				j++;
+			else
+			{
+				map_error();
+				exit(3);
+			}
+		}
+	j = 1;
+	i++;
 	}
 }
+
