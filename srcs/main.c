@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 16:21:55 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:53:18 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ int	main(int argc, char **argv)
 
 	//t_map_chars	map_chars = maps[0].map_chars;
 
-	//t_biggest biggest;
+	t_biggest biggest;
 
 	maps[0].map_chars.empty = '.';
 	maps[0].map_chars.obstacle = 'o';
 
 	printf("char empty: %c, char obstacle: %c\n", maps[0].map_chars.empty, maps[0].map_chars.obstacle);
 	printf("Taille map x %d, y %d\n", maps[0].x, maps[0].y);
-        /*biggest = get_biggest(mtoi(maps[0], maps[0].y, maps[0].x), maps[0].y, maps[0].x);
+        biggest = get_biggest(mtoi(maps[0], maps[0].y, maps[0].x), maps[0].y, maps[0].x);
         printf("\nLe plus grand est en %d,%d et fait %d\n", biggest.row, biggest.col, biggest.value);
 
 	int	i = 0;
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 		printf("\n");
 		i = 0;
 		j++;
-	}*/
+	}
 
 	free(maps);
 	return (0);

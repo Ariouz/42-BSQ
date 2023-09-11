@@ -13,5 +13,6 @@ Projet BSQ pour la Piscine C de 42
   - [ ] Si premiere ligne, char full et empty et obstacle sont identiques - map error\n
   - [ ] Nb de lignes >= 2 (1 ere compte pas) et col >= 1, sinon - map error\n
 - [ ] Makefile
-- [ ] BackTracking
-- [ ] Gestion d'erreur     
+- [X] Solveur
+- [ ] Gestion d'erreur
+- [ ] Verifier TOUS les malloc / free
