@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:30:41 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 14:48:08 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:51:15 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	check_new_max(int **map, int row, int col, t_biggest	*biggest)
 {
 	map[row][col] = ft_min(map[row - 1][col],
 			map[row][col - 1], map[row - 1][col - 1]) + 1;
-	if (ft_max(biggest->value, map[row][col]) == biggest->value)
+	if (ft_max(biggest->value, map[row][col]) > biggest->value)
 	{
 		biggest->row = row;
 		biggest->col = col;
