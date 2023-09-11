@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 16:53:18 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:10:03 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 int	main(int argc, char **argv)
 {
+	int	count;
 	t_map	*maps;
 
 	if (argc <= 1)
@@ -38,36 +39,42 @@ int	main(int argc, char **argv)
 	//t_map_chars	map_chars = maps[0].map_chars;
 
 	t_biggest biggest;
-
-	maps[0].map_chars.empty = '.';
-	maps[0].map_chars.obstacle = 'o';
-
-	printf("char empty: %c, char obstacle: %c\n", maps[0].map_chars.empty, maps[0].map_chars.obstacle);
-	printf("Taille map x %d, y %d\n", maps[0].x, maps[0].y);
-        biggest = get_biggest(mtoi(maps[0], maps[0].y, maps[0].x), maps[0].y, maps[0].x);
-        printf("\nLe plus grand est en %d,%d et fait %d\n", biggest.row, biggest.col, biggest.value);
-
-	int	i = 0;
-	int	j = 0;
-	int	**imap = mtoi(maps[0], maps[0].y, maps[0].x);
-	while (j < maps[0].y)
+	count = 0;
+	while (count != argc - 1)
 	{
-		while (i < maps[0].x)
-		{
-			if (j + biggest.value - 1 >= biggest.row  && j + biggest.value<= biggest.row + biggest.value
-					&& i + biggest.value - 1 >= biggest.col && i + biggest.value <= biggest.col + biggest.value)
-			{
-				printf(".");
-			}
-			else
-				printf("%d", imap[j][i]);
-			i++;
-		}
-		printf("\n");
-		i = 0;
-		j++;
-	}
+		//maps[count].map_chars.empty = '.';
+		//maps[count].map_chars.obstacle = 'o';
 
+		maps[count].map_chars = check_card(maps[count].map_chars, maps[count].content[0]);
+		check_lines(maps[count]);
+
+		printf("char empty: %c, char obstacle: %c\n", maps[count].map_chars.empty, maps[count].map_chars.obstacle);
+		printf("Taille map x %d, y %d\n", maps[count].x, maps[count].y);
+        	biggest = get_biggest(mtoi(maps[count], maps[count].y, maps[count].x), maps[count].y, maps[count].x);
+        	printf("\nLe plus grand est en %d,%d et fait %d\n", biggest.row, biggest.col, biggest.value);
+
+		int	i = 0;
+		int	j = 0;
+		int	**imap = mtoi(maps[count], maps[count].y, maps[count].x);
+		while (j < maps[count].y)
+		{
+			while (i < maps[count].x)
+			{
+				if (j + biggest.value - 1 >= biggest.row  && j + biggest.value<= biggest.row + biggest.value
+					&& i + biggest.value - 1 >= biggest.col && i + biggest.value <= biggest.col + biggest.value)
+				{
+					printf(".");
+				}
+				else
+					printf("%d", imap[j][i]);
+				i++;
+			}
+			printf("\n");
+			i = 0;
+			j++;
+		}
+		count++;
+	}
 	free(maps);
 	return (0);
 }

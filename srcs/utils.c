@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 14:57:56 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:39:34 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	is_map_error(t_map *maps)
 	int	j;
 
 	i = 0;
-	j = 1;
+	j = 2;
 	while(maps[i].fd != -2)
 	{
 		if (maps[i].fd == -1)
@@ -61,17 +61,61 @@ void	is_map_error(t_map *maps)
 			map_error();
 			exit(2);
 		}
-		/*while(maps[i].content[j])
+		while(maps[i].content[j])
 		{
-			if(ft_strlen(maps[i].content[1]) == ft_strlen(maps[i].content[j]))
+			if(ft_strlen(maps[i].content[1]) == ft_strlen(maps[i].content[j - 1]))
 				j++;
 			else
 			{
 				map_error();
 				exit(3);
 			}
-		}*/
-	j = 1;
+		}
+	j = 2;
 	i++;
+
+	}
+}
+
+t_map_chars	check_card(t_map_chars	card, char *str)
+{
+	int	len;
+
+	len = ft_strlen(str) - 3;
+	if (str[len] == str[len + 1] || str[len] == str[len + 2] || str[len + 1] == str[len + 2])
+	{
+		printf("Erreur a mettre au propre cards egaux");
+		exit(5);
+	}
+	card.empty = str[len];
+	card.obstacle = str[len + 1];
+	card.full = str[len + 2];
+	return (card);
+}
+
+void	check_lines(t_map map)
+{
+	int	i;
+	int	o;
+
+	i = 1;
+	o = 1;
+	while(i != ft_atoi(map.content[0]))
+	{
+		if (!(map.content[i][o] == map.map_chars.empty 
+					|| map.content[i][o] == map.map_chars.obstacle 
+					|| map.content[i][o] == '\n'
+				       	|| map.content[i][o] == '\0'))
+		{
+			printf("Erreur char pas desire !");
+			exit(5);
+		}
+		if (map.content[i][o] == '\0')
+		{
+			
+			i++;
+			o = -1;
+		}
+		o++;
 	}
 }
