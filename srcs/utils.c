@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/08 10:31:58 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 10:32:13 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_map	*get_maps(char **filenames, int fc)
 	}
 	while (i < fc)
  	{
-		printf("%s\n", filenames[i]);
 		map.fd = open(filenames[i], O_RDONLY);
 		// TODO INIT MAP X,Y
 		map.content = get_map_content(map.fd);
@@ -56,7 +55,6 @@ void	is_map_error(t_map *maps)
 	i = 0;
 	while(maps[i].fd != -2)
 	{
-		printf("%d\n", maps[i].fd);
 		if (maps[i].fd == -1)
 		{
 			map_error();
