@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:05:17 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 16:52:40 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:01:17 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	set_map_content(int fd, t_map *map)
 	}
 	map->y = j - 1;
 	map->content = content;
-	/*if (j - 1 != ft_atoi(content[0]))
-		printf("**Erreur Map size add fonc !**");*/
+	if (j - 1 != ft_atoi(content[0]))
+		printf("**Erreur Map size add fonc !**");
 }
 
 /*char	**read_file(t_map *maps, int fc)

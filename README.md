@@ -4,8 +4,8 @@ Projet BSQ pour la Piscine C de 42
 # TODO
 
 - [ ] Parsing Map
-  - [ ] Recuperer 3 dernier char de la premiere ligne dans une struct
-  - [ ] Recuperer l1 - 3 derniers pour atoi, struct
+  - [ ] Recuperer 3 dernier chars de la ligne 1 pour la struct: full, empty, obstacle
+  - [ ] Recuperer ligne 1 de map de i = 0 jusqu'a i = len - 3 pour atoi et verifier nombre de lignes 
 - [ ] Map valide:
   - [X] Verifier si nb lignes = l1, sinon - map error\n
   - [ ] Si une ligne contient un char qui n'est pas empty, obstacle - map error\n
@@ -13,6 +13,7 @@ Projet BSQ pour la Piscine C de 42
   - [ ] Si premiere ligne, char full et empty et obstacle sont identiques - map error\n
   - [ ] Nb de lignes >= 2 (1 ere compte pas) et col >= 1, sinon - map error\n
 - [ ] Makefile
+- [ ] Boucle pour resoudre toutes les maps et pas que maps[0]
 - [X] Solveur
 - [ ] Gestion d'erreur
 - [ ] Verifier TOUS les malloc / free
