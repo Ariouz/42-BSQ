@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:32:02 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 14:07:34 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:06:25 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_strlen(char *str)
+int	ftlen(char *str)
 {
 	int	i;
 
@@ -39,7 +39,7 @@ int	ft_atoi(char *str)
 	int	sign;
 	int	i;
 	int	nb;
-	
+
 	sign = 1;
 	nb = 0;
 	i = 0;

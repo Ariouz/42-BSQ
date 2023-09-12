@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:50:25 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 14:21:45 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:03:27 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	**mtoi(t_map map, int maxRow, int maxCol)
 		imap[row] = malloc(sizeof(int) * maxCol + 1);
 		while (col < maxCol)
 		{
-			if (map.map_chars.empty == map.content[row+1][col+1])
+			if (map.map_chars.empty == map.content[row + 1][col + 1])
 				imap[row][col] = 1;
 			else
 				imap[row][col] = 0;

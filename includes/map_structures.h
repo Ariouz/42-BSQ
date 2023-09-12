@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:39:14 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 13:57:27 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/12 09:37:52 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 typedef struct s_map_chars
 {
-        char    empty;
-        char    obstacle;
-        char    full;
-}       t_map_chars;
+	char	empty;
+	char	obstacle;
+	char	full;
+}	t_map_chars;
 
-typedef struct s_map 
+typedef struct s_map
 {
-	int		fd;
-	int		x;
-	int		y;
-	char		**content;
-	int		**imap;
 	t_map_chars	map_chars;
+	char		**content;
+	int			fd;
+	int			x;
+	int			y;
+	int			**imap;
 }	t_map;
 
 typedef struct s_rect
@@ -45,6 +45,5 @@ typedef struct s_biggest
 	int	col;
 	int	value;
 }	t_biggest;
-
 
 #endif

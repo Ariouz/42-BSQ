@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 20:10:03 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:49:47 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 
 	if (argc <= 1)
 	{
+		// pas map erreur mais recuperer map en entre
 		map_error();
 		return (1);
 	}
