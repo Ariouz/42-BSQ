@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions.h                                     :+:      :+:    :+:   */
+/*   standard_reader.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 11:33:24 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 18:16:04 by vicalvez         ###   ########.fr       */
+/*   Created: 2023/09/12 16:34:32 by vicalvez          #+#    #+#             */
+/*   Updated: 2023/09/12 16:43:35 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#ifndef STANDARD_READER_H
+# define STANDARD_READER_H
 
-void	ft_putstr(char *str);
-int		ft_atoi(char *str);
-int		ftlen(char *str);
-char	*ft_strdup(char *src);
-void	ft_putchar(char c);
+# include "map_structures.h"
+
+t_map	read_standard();
 #endif

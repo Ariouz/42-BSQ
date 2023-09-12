@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 16:18:59 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:26:27 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "../includes/bsq_solver.h"
 #include "../includes/result_printer.h"
 #include <stdlib.h>
+#include "../includes/standard_reader.h"
 
 void	go_free(t_map *maps, int count)
 {
@@ -46,19 +47,25 @@ int	main(int argc, char **argv)
 {
 	int	count;
 	t_map	*maps;
+	int	is_stdin;
 
 	if (argc <= 1)
 	{
-		// pas map erreur mais recuperer map en entre
-		// todo read(0);
-		return (1);
+		maps = malloc(sizeof(t_map) * 1);
+		maps[0] = read_standard();
+		argc++;
+		is_stdin = 1;
 	}
-	maps = get_maps(argv, argc);
-	close_maps(maps);
+	else
+	{
+		maps = get_maps(argv, argc);
+		close_maps(maps);
+		is_stdin = 0;
+	}
 	count = 0;
 	while (count != argc - 1)
 	{
-		aff_result(count, maps);
+		aff_result(count, maps, is_stdin);
 		count++;
 
 	}

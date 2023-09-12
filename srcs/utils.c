@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 15:31:00 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:32:46 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ t_map	*get_maps(char **filenames, int fc)
 int	is_map_error(t_map maps)
 {
 	int	j;
-
+	printf("oo\n");
 	j = 2;
 	if (maps.fd == -1 || maps.fd == -2)
 	{
+		printf("ici 2");
 		return (1);
 	}
 	while (maps.content[j])
@@ -62,6 +63,7 @@ int	is_map_error(t_map maps)
 			j++;
 		else
 		{
+			printf("ici 3");
 			return (1);
 		}
 	}
@@ -72,7 +74,8 @@ int	is_map_error(t_map maps)
 t_map_chars	check_card(t_map_chars	card, char *str)
 {
 	int	len;
-
+	
+	printf("oo\n");
 	len = ftlen(str) - 3;
 	if (str[len] == str[len + 1] || str[len] == str[len + 2]
 		|| str[len + 1] == str[len + 2])
@@ -91,6 +94,7 @@ int	check_lines(t_map map)
 	int	i;
 	int	o;
 
+	printf("oo\n");
 	i = 1;
 	o = 1;
 	while (map.content[i])
@@ -100,6 +104,10 @@ int	check_lines(t_map map)
 				|| map.content[i][o] == '\n'
 				|| map.content[i][o] == '\0'))
 		{
+			if (!(map.content[i][o] == map.map_chars.empty || map.content[i][o] == map.map_chars.obstacle))
+				printf("pas empty ou full %c vs %c ou %c \n", map.content[i][o], map.map_chars.empty, map.map_chars.obstacle);
+			printf("empty %c, full %c, obstacle %c\n", map.map_chars.empty, map.map_chars.obstacle, map.map_chars.full);
+			printf("ici");
 			return (1);
 		}
 		if (map.content[i][o] == '\0')
@@ -109,7 +117,10 @@ int	check_lines(t_map map)
 		}
 		o++;
 	}
-	if (i - 2 != ft_atoi(map.content[0]))
+	if (i - 2 != map.y)
+	{
+		printf("ou ici");
 		return (1);
+	}
 	return (0);
 }

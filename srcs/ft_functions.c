@@ -6,11 +6,12 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:32:02 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 16:10:09 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:15:28 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putstr(char *str)
 {
@@ -38,6 +39,30 @@ int	ftlen(char *str)
 		i++;
 	return (i);
 }
+
+char    *str_cpy(char *dest, char *src)
+{
+        int     i;
+
+        i = 0;
+        while (src[i])
+        {
+                dest[i] = src[i];
+                i++;
+        }
+        dest[i] = '\0';
+        return (dest);
+}
+
+char    *ft_strdup(char *src)
+{
+        char    *dup;
+
+        dup = malloc(ftlen(src));
+        str_cpy(dup, src);
+        return (dup);
+}
+
 
 int	ft_atoi(char *str)
 {

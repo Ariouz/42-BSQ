@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:24:54 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 16:20:25 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:27:19 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ int	check_errors(t_map map)
 	return (0);
 }
 
-void	aff_result(int count, t_map *maps)
+void	aff_result(int count, t_map *maps, int is_stdin)
 {
 	t_biggest biggest;
 	int	**_mtoi;
 	int	i = 0;
 	int	j = 0;
 
-	maps[count].map_chars = check_card(maps[count].map_chars, maps[count].content[0]);
+	if (!is_stdin)
+		maps[count].map_chars = check_card(maps[count].map_chars, maps[count].content[0]);
 	_mtoi = mtoi(maps[count], maps[count].y, maps[count].x);
 	if (check_errors(maps[count]))
 	{
