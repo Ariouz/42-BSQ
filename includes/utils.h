@@ -6,14 +6,15 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:30:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 09:52:15 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:11:36 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-#include "map_structures.h"
+# include "map_structures.h"
+
 t_map_chars	check_card(t_map_chars card, char *str);
 t_map		*get_maps(char **filenames, int fc);
 void		map_error(void);

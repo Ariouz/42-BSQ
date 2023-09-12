@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:05:17 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/11 19:15:06 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:29:52 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ void	close_maps(t_map *maps)
 	}
 }
 
+void	update(t_map *map, int *i, int *j, char **content)
+{
+	(*j)++;
+	content[*j] = malloc(BUFFER_SIZE * sizeof(char));
+	map->x = *i - 1;
+	*i = 0;
+}
+
 void	set_map_content(int fd, t_map *map)
 {
 	char	**content;
@@ -47,9 +55,7 @@ void	set_map_content(int fd, t_map *map)
 	{
 		if (buffer[0] == '\n')
 		{
-			content[++j] = malloc(BUFFER_SIZE * sizeof(char));
-			map->x = i - 1;
-			i = 0;
+			update(map, &i, &j, content);
 		}
 		content[j][i++] = buffer[0];
 		buf = read(fd, buffer, 1);

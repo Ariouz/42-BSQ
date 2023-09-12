@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:32:02 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 10:06:25 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:32:45 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	ft_putstr(char *str)
 		write(1, str + i, 1);
 		i++;
 	}
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
 
 int	ftlen(char *str)
