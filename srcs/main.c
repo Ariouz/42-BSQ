@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 11:53:05 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:32:21 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,22 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	maps = get_maps(argv, argc);
-	is_map_error(maps);
-	printf("%s\n", maps[0].content[0]);
 	close_maps(maps);
 	t_biggest biggest;
 	count = 0;
 	while (count != argc - 1)
 	{
 
+		if (is_map_error(maps[count]))
+		{
+			continue ;
+		}
 		maps[count].map_chars = check_card(maps[count].map_chars, maps[count].content[0]);
 		check_lines(maps[count]);
-        	biggest = get_biggest(mtoi(maps[count], maps[count].y, maps[count].x), maps[count].y, maps[count].x);
+        	int     **_mtoi = mtoi(maps[count], maps[count].y, maps[count].x);
+		biggest = get_biggest(_mtoi, maps[count].y, maps[count].x);
 		int	i = 0;
 		int	j = 0;
-		int	**_mtoi = mtoi(maps[count], maps[count].y, maps[count].x);
 		while (j < maps[count].y)
 		{
 			while (i < maps[count].x)
@@ -63,10 +65,14 @@ int	main(int argc, char **argv)
 
 				i++;
 			}
-			printf("\n");
+			ft_putchar('\n');
 			i = 0;
+			free(_mtoi[j]);
+			free(maps[count].content[j]);
 			j++;
 		}
+		free(maps[count].content);
+		free(_mtoi);
 		count++;
 	}
 	free(maps);

@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 10:02:00 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:34:36 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,33 +47,30 @@ t_map	*get_maps(char **filenames, int fc)
 	return (maps);
 }
 
-void	is_map_error(t_map *maps)
+int	is_map_error(t_map maps)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 2;
-	while (maps[i].fd != -2)
+	if (maps.fd == -1 || maps.fd == -2)
 	{
-		if (maps[i].fd == -1)
+		map_error();
+		return (1);
+	}
+	while (maps.content[j])
+	{
+		if (ftlen(maps.content[1]) == ftlen(maps.content[j - 1]))
+			j++;
+		else
 		{
 			map_error();
-			exit(2);
+			return (1);
 		}
-		while (maps[i].content[j])
-		{
-			if (ftlen(maps[i].content[1]) == ftlen(maps[i].content[j - 1]))
-				j++;
-			else
-			{
-				map_error();
-				exit(3);
-			}
-		}
-		j = 2;
-		i++;
 	}
+	j = 2;
+	return (0);
 }
 
 t_map_chars	check_card(t_map_chars	card, char *str)

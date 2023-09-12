@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:30:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 11:11:36 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:33:49 by vicalvez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ t_map_chars	check_card(t_map_chars card, char *str);
 t_map		*get_maps(char **filenames, int fc);
 void		map_error(void);
 void		check_lines(t_map map);
-int			is_map_error(t_map *maps);
+int			is_map_error(t_map maps);
 #endif
