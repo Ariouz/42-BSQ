@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:43:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 12:34:36 by vicalvez         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:31:00 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,11 @@ t_map	*get_maps(char **filenames, int fc)
 
 int	is_map_error(t_map maps)
 {
-	int	i;
 	int	j;
 
-	i = 0;
 	j = 2;
 	if (maps.fd == -1 || maps.fd == -2)
 	{
-		map_error();
 		return (1);
 	}
 	while (maps.content[j])
@@ -65,7 +62,6 @@ int	is_map_error(t_map maps)
 			j++;
 		else
 		{
-			map_error();
 			return (1);
 		}
 	}
@@ -81,8 +77,8 @@ t_map_chars	check_card(t_map_chars	card, char *str)
 	if (str[len] == str[len + 1] || str[len] == str[len + 2]
 		|| str[len + 1] == str[len + 2])
 	{
-		printf("Erreur a mettre au propre cards egaux");
-		exit(5);
+		card.empty = 0;
+		return (card);
 	}
 	card.empty = str[len];
 	card.obstacle = str[len + 1];
@@ -90,22 +86,21 @@ t_map_chars	check_card(t_map_chars	card, char *str)
 	return (card);
 }
 
-void	check_lines(t_map map)
+int	check_lines(t_map map)
 {
 	int	i;
 	int	o;
 
 	i = 1;
 	o = 1;
-	while (i != ft_atoi(map.content[0]))
+	while (map.content[i])
 	{
 		if (!(map.content[i][o] == map.map_chars.empty
 			|| map.content[i][o] == map.map_chars.obstacle
 				|| map.content[i][o] == '\n'
 				|| map.content[i][o] == '\0'))
 		{
-			printf("Erreur char pas desire !");
-			exit(5);
+			return (1);
 		}
 		if (map.content[i][o] == '\0')
 		{
@@ -114,4 +109,7 @@ void	check_lines(t_map map)
 		}
 		o++;
 	}
+	if (i - 2 != ft_atoi(map.content[0]))
+		return (1);
+	return (0);
 }

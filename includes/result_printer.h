@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   result_printer.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: thoribal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 11:30:58 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 14:58:22 by thoribal         ###   ########.fr       */
+/*   Created: 2023/09/12 14:24:46 by thoribal          #+#    #+#             */
+/*   Updated: 2023/09/12 14:58:40 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef RESULT_PRINTER_H
+# define RESULT_PRINTER_H
 
 # include "map_structures.h"
 
-t_map_chars	check_card(t_map_chars card, char *str);
-t_map		*get_maps(char **filenames, int fc);
-void		map_error(void);
-int			check_lines(t_map map);
-int			is_map_error(t_map maps);
+void	aff_result(int count, t_map *maps);
 #endif

@@ -1,10 +1,20 @@
-.DEFAULT_GOAL: compile
+NAME = bsq
 
-COMPILE_FLAGS= -Wall -Wextra -Werror
-MAPS= maps/map1 maps/map2 maps/map3
+SRC =  srcs/*.c
 
-compile:
-	clang $(COMPILE_FLAGS) srcs/*.c -o bsq.out -I includes
+OBJ =    *.o
 
-test: compile
-	./bsq.out $(MAPS)
+FLAG = -Wall -Werror -Wextra
+
+$(NAME) :
+	gcc $(FLAG) $(SRC) -o $(NAME) -I includes
+
+all : $(NAME)
+
+clean :
+	rm -f $(OBJ)
+
+fclean : clean
+	rm -f $(NAME)
+
+re : fclean all
