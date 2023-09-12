@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:58:36 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 15:55:30 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:18:59 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	go_free(t_map *maps, int count)
 		free(maps[i].content);
 		i++;
 	}
+	//free(maps[i].content[j]);
+	//free(maps[i].content);
 	free(maps);
 }
 

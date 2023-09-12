@@ -6,7 +6,7 @@
 /*   By: vicalvez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:24:54 by vicalvez          #+#    #+#             */
-/*   Updated: 2023/09/12 15:55:07 by thoribal         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:20:25 by thoribal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	aff_result(int count, t_map *maps)
 	if (check_errors(maps[count]))
 	{
 		map_error();
+		//free(_mtoi);
 		return ;
 	}
 	biggest = get_biggest(_mtoi, maps[count].y, maps[count].x);
